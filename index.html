@@ -17,35 +17,37 @@
 </head>
 <body>
   <header>
-    <h1>Todo</h1>
-    <img>
+    <h1>TODO</h1>
+    <img src="images/icon-moon.svg" alt="theme change icon">
   </header>
   <main>
-    <section>
-      <div>
-        <input type="checkbox">
-        <input type="text">
+    <section class="addTaskCon">
+      <div class="addTaskInnerCon">
+        <input type="checkbox" id="addTaskCheckbox">
+        <input type="text" id="addTaskInput" placeholder="Create a new todo">
       </div>
     </section>
-    <section>
-      <div>
-        <input type="checkbox">
+    <section class="taskList">
+      <div class="task">
+        <input type="checkbox" class="checkbox">
         <p> Jog around the park 3x</p>
       </div>
-      <div>
-        <input type="checkbox">
+      <div class="task">
+        <input type="checkbox" class="checkbox">
         <p> Jog around the park 3x</p>
       </div>
-      <div>
-        <div>
+      <div class="dashboard">
+        <div class="taskLeft">
           <span>5 items left</span>
         </div>
-        <div>
-          <span>All</span>
-          <span>Active</span>
-          <span>Completed</span>
+        <div class="categories">
+          <span class="all">All</span>
+          <span class="active">Active</span>
+          <span class="completed">Completed</span>
         </div>
-        <div>Clear Completed</div>
+        <div class="clear">
+          <span>Clear Completed</span>
+        </div>
       </div>
     </section>
   </main>
