@@ -17,42 +17,51 @@
 </head>
 <body>
   <header>
-    <h1>TODO</h1>
+    <div class="headerItems">
+      <h1>TODO</h1>
     <img src="images/icon-moon.svg" alt="theme change icon">
+    </div>
   </header>
   <main>
-    <section class="addTaskCon">
-      <div class="addTaskInnerCon">
-        <input type="checkbox" id="addTaskCheckbox">
-        <input type="text" id="addTaskInput" placeholder="Create a new todo">
-      </div>
+    <section class="mainCon">
+      <section class="addTaskCon">
+        <div class="addTaskInnerCon">
+          <input type="checkbox" id="addTaskCheckbox">
+          <input type="text" id="addTaskInput" placeholder="Create a new todo">
+        </div>
+      </section>
+      <section class="taskList">
+        <div class="task">
+          <input type="checkbox" class="checkbox">
+          <p> Jog around the park 3x</p>
+        </div>
+        <div class="task">
+          <input type="checkbox" class="checkbox">
+          <p> Jog around the park 3x</p>
+        </div>
+        <div class="dashboard">
+          <div class="taskLeft">
+            <span>5 items left</span>
+          </div>
+          <div class="categories">
+            <span class="all">All</span>
+            <span class="active">Active</span>
+            <span class="completed">Completed</span>
+          </div>
+          <div class="clear">
+            <span>Clear Completed</span>
+          </div>
+        </div>
+      </section>
     </section>
-    <section class="taskList">
-      <div class="task">
-        <input type="checkbox" class="checkbox">
-        <p> Jog around the park 3x</p>
-      </div>
-      <div class="task">
-        <input type="checkbox" class="checkbox">
-        <p> Jog around the park 3x</p>
-      </div>
-      <div class="dashboard">
-        <div class="taskLeft">
-          <span>5 items left</span>
-        </div>
-        <div class="categories">
-          <span class="all">All</span>
-          <span class="active">Active</span>
-          <span class="completed">Completed</span>
-        </div>
-        <div class="clear">
-          <span>Clear Completed</span>
-        </div>
-      </div>
+    <section class="instruction">
+      <p>Drag and drop to reorder list</p>
+      <label class="container">
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
     </section>
   </main>
-  <footer>
-    <p>Drag and drop to reorder list</p>
-  </footer>
+  <script src="main.js"></script>
 </body>
 </html>
