@@ -34,7 +34,7 @@ addTaskCheckbox.addEventListener('click', getTask)
 
 function removeInputCheck() {
     const tasks = taskList.children
-    tasks.lengtha !== 0 ? addTaskCheckbox.checked = false : ''
+    tasks.length !== 0 ? addTaskCheckbox.checked = false : ''
 }
 setInterval(removeInputCheck, 500)
 
