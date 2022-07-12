@@ -57,13 +57,16 @@ themeIcon.addEventListener('click', changeTheme)
 const addTaskCheckbox = document.querySelector('#addTaskCheckbox')
 const addTaskInput = document.querySelector('.addTaskInput')
 const taskList = document.querySelector('.taskList')
+let todoList = []
 
 addTaskCheckbox.addEventListener('click', getTask)
     function getTask() {
         if(this.checked) {
-            localStorage.input = JSON.stringify({'text': addTaskInput.value});
-            const taskText = localStorage.input;
+            const taskText = addTaskInput.value
             if(taskText === '') return
+            // todoList.push({input: taskText})
+            // localStorage.setItem("todoList": )
+
             if(themeIcon.classList.contains('lightThemeIcon')) {
                 taskList.innerHTML += 
                 `<div class="task taskThemeLight">
@@ -73,13 +76,12 @@ addTaskCheckbox.addEventListener('click', getTask)
                 </div>`
             }else {
                 taskList.innerHTML += 
-                `<div class="task taskThemeLight">
+                `<div class="task">
                 <input type="checkbox" class="checkbox">
                 <p>${taskText}</p>
                 <img src="images/icon-cross.svg" class="delete">
                 </div>`
             }
-            
             this.checked = true
         }
         addTaskInput.value = ''
