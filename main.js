@@ -9,24 +9,77 @@
 //- Delete todos from the list
 //- Filter by all/active/complete todos
 //- Clear all completed todos
-//- Toggle light and dark mode
+//- add light and dark mode
 //- **Bonus**: Drag and drop to reorder items on the list
 
+
+const themeIcon = document.querySelector('.themeIcon')
+themeIcon.addEventListener('click', changeTheme)
+    function changeTheme(e) {
+        const body = document.querySelector('body')
+        const header = document.querySelector('header')
+        const themeIcon = document.querySelector('.themeIcon')
+        const addTaskInnerCon = document.querySelector('.addTaskInnerCon')
+        const addTaskInput = document.querySelector('.addTaskInput')
+        const tasks = document.querySelectorAll('.task')
+        const dashboard = document.querySelector('.dashboard')
+        const categories = document.querySelector('.categories')
+        const taskLeft = document.querySelector('.taskLeft')
+        const clear = document.querySelector('.clear')
+        const instruction = document.querySelector('.instruction')
+
+        themeIcon.classList.toggle('lightThemeIcon');
+        if(themeIcon.classList.contains('lightThemeIcon')) {
+            body.classList.add('bodyThemeLight')
+            header.classList.add('headerThemeLight')
+            addTaskInnerCon.classList.add('addTaskInnerConTheme')
+            addTaskInput.classList.add('addTaskInputTheme')
+            tasks.forEach(task => task.classList.add('taskThemeLight'))
+            dashboard.classList.add('dashboardThemeLight')
+            categories.classList.add('categoriesThemeLight')
+            taskLeft.classList.add('taskLeftThemeLight')
+            clear.classList.add('clearThemeLight')
+            instruction.classList.add('instructionTheme')
+        }else {
+            body.classList.remove('bodyThemeLight')
+            header.classList.remove('headerThemeLight')
+            addTaskInnerCon.classList.remove('addTaskInnerConTheme')
+            addTaskInput.classList.remove('addTaskInputTheme')
+            tasks.forEach(task => task.classList.remove('taskThemeLight'))
+            dashboard.classList.remove('dashboardThemeLight')
+            categories.classList.remove('categoriesThemeLight')
+            taskLeft.classList.remove('taskLeftThemeLight')
+            clear.classList.remove('clearThemeLight')
+            instruction.classList.remove('instructionTheme')
+        }
+    }
+
 const addTaskCheckbox = document.querySelector('#addTaskCheckbox')
-const addTaskInput = document.querySelector('#addTaskInput')
+const addTaskInput = document.querySelector('.addTaskInput')
 const taskList = document.querySelector('.taskList')
 
 addTaskCheckbox.addEventListener('click', getTask)
     function getTask() {
         if(this.checked) {
-            const taskText = addTaskInput.value
+            localStorage.input = JSON.stringify({'text': addTaskInput.value});
+            const taskText = localStorage.input;
             if(taskText === '') return
-            taskList.innerHTML += 
-            `<div class="task">
-            <input type="checkbox" class="checkbox">
-            <p>${taskText}</p>
-            <img src="images/icon-cross.svg" class="delete">
-            </div>`
+            if(themeIcon.classList.contains('lightThemeIcon')) {
+                taskList.innerHTML += 
+                `<div class="task taskThemeLight">
+                <input type="checkbox" class="checkbox">
+                <p>${taskText}</p>
+                <img src="images/icon-cross.svg" class="delete">
+                </div>`
+            }else {
+                taskList.innerHTML += 
+                `<div class="task taskThemeLight">
+                <input type="checkbox" class="checkbox">
+                <p>${taskText}</p>
+                <img src="images/icon-cross.svg" class="delete">
+                </div>`
+            }
+            
             this.checked = true
         }
         addTaskInput.value = ''
@@ -95,3 +148,4 @@ clearCompletedBtn.addEventListener('click', clearCompletedTasks)
         const completedTasks = document.querySelectorAll('.complete')
         completedTasks.forEach(task => task.remove())
     }
+

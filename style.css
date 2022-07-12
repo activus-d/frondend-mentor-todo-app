@@ -105,6 +105,13 @@ header img {
     height: 4rem;
     padding-top: 0.5rem;
 }
+.themeIcon {
+    height: 4rem;
+    width: 4rem;
+    background-image: url(images/icon-moon.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 h1 {
     font-size: 4rem;
 }
@@ -127,9 +134,11 @@ main {
     position: relative;
 }
 .addTaskCon {
-    min-height: 5rem;
+    height: 5rem;
 }
 .addTaskInnerCon {
+    height: 3rem;
+    width: 100%;
     display: flex;
     align-items: center;
     font-size: 3rem;
@@ -141,8 +150,8 @@ main {
     margin-right: 1rem;
     flex-basis: 6%;
 }
-#addTaskInput {
-    flex-basis: 90%;
+.addTaskInput {
+    flex-basis: 100%;
     height: 100%;
     background-color: #25273c;
     border: none;
@@ -150,7 +159,7 @@ main {
     padding: 0.5rem;
     color: #adafc6; 
 }
-#addTaskInput:focus {
+.addTaskInput:focus {
     outline: none;
 }
 ::-webkit-input-placeholder {
@@ -174,26 +183,28 @@ main {
 .task {
     display: flex;
     align-items: center;
-    font-size: 2rem;
     min-height: 5rem;
     width: 100%;
     background-color: #25273c;
     border-bottom: 1px solid #868790;
-    padding: 0 2rem
+    padding: 0 2rem;
 }
 .checkbox {
     margin-right: 1rem;
     flex-basis: 6%;
+    cursor: pointer;
 }
 .task p {
     flex-basis: 90%;
-    background-color: #25273c;
+    /* background-color: #25273c; */
     border: none;
     font-size: 1.6rem;
-    padding: 1rem
+    padding: 1rem;
+    cursor: pointer;
 }
 .complete p {
     text-decoration: line-through;
+    color: #43455a;
 }
 .delete {
     display: none;
@@ -220,8 +231,12 @@ main {
     display: grid;
     align-items: center;
     height: 5rem;
-    background-color: #25273c;
+    /* background-color: #25273c; */
     padding: 0 2rem;
+    cursor: pointer;
+}
+.taskLeft:hover {
+    color: white;
 }
 .clear {
     grid-column: 2/3;
@@ -230,8 +245,12 @@ main {
     justify-content: end;
     align-items: center;
     height: 5rem;
-    background-color: #25273c;
+    /* background-color: #25273c; */
     padding: 0 2rem;
+    cursor: pointer;
+}
+.clear span:hover {
+    color: white;
 }
 .categories {
     grid-column: 1/3;
@@ -242,24 +261,82 @@ main {
     align-items: center;
     height: 5rem;
     background-color: #25273c;
+    /* color: #a9a9af; */
+    color: #595a75;
     padding: 0 6rem;
     font-size: 1.3rem;
+}
+.categories:hover {
+    /* color: #737580; */
+}
+.all {
+    color: #6088d2;
 }
 .categories span {
     justify-self: center;
     padding-right: 1.5rem;
+    cursor: pointer;
+}
+.categories span:hover {
+    color: white;
 }
 .instruction {
     margin: 3rem auto;
     color: #adafc6;
     position: absolute;
-    top: 170%;
+    top: 150%;
     font-size: 1.2rem;
 }
 .instruction p {
     margin-bottom: 2rem;
 }
+/*****************************
+LIGHT THEME
+*****************************/
+.bodyThemeLight {
+    background-color: #fafafa;
+}
+.headerThemeLight {
+    background-image: url(images/bg-mobile-light.jpg);
+}
+.lightThemeIcon {
+    background-image: url(images/icon-sun.svg);
+}
+.addTaskInnerConTheme {
+    background-color: white;
+}
+.addTaskInputTheme {
+    background-color: white;
+    border: none;
+}
+.taskThemeLight {
+    background-color: white;
+    color: #4a4c58;
+    box-shadow: 0.2px 0.2px 1px 1px #eff0f7;
+    border-bottom: #eff0f7;
+}
+.dashboardThemeLight {
+    background-color: white;
+    color: #868592;
+    box-shadow: 0.2px 0.2px 1px 1px #eff0f7;
+    border-bottom: #eff0f7;
+}
+.categoriesThemeLight {
+    background-color: white;
+}
+.categoriesThemeLight span:hover {
+    color: #2d2e33;
+}
 
+.taskLeftThemeLight span:hover {
+    color: #4a4c58;
+}
+.clearThemeLight span:hover {
+    color: #4a4c58;
+}
+.instructionTheme {
+    color: #868592;
+}
 
 @media all and (min-width: 650px) {
     body {
@@ -268,6 +345,9 @@ main {
         background-image: url(images/bg-desktop-dark.jpg);
         margin: 0 auto;
         justify-content: center;
+    }
+    .headerThemeLight {
+        background-image: url(images/bg-desktop-light.jpg);
     }
     .headerItems {
         width: 60rem;
@@ -300,7 +380,7 @@ main {
         justify-content: space-between;
         align-items: center;
         height: auto;
-        background-color: #25273c;
+        /* background-color: #25273c; */
         padding: 0;
     }
     .all {
