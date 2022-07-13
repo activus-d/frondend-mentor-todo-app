@@ -275,13 +275,12 @@ main {
 }
 
 .delete {
-    display: none;
     cursor: pointer;
     width: 3rem;
     height: 3rem;
 }
 .task:hover .delete {
-    display: block;
+    transform: scale(1.15, 1.15)
 }
 .dashboard {
     display: grid;
