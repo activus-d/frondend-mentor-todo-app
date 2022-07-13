@@ -89,7 +89,7 @@ header {
     color: #fefffe;
     width: 100%;
     min-height: 25rem;
-    background-image: url(images/bg-mobile-dark.jpg);
+    background-image: url(../images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 5rem 3rem;
@@ -108,9 +108,14 @@ header img {
 .themeIcon {
     height: 4rem;
     width: 4rem;
-    background-image: url(images/icon-moon.svg);
+    background-image: url(../images/icon-moon.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    cursor: pointer;
+}
+.themeIcon:hover {
+    transform: rotate(360deg);
+    transition: 0.3s;
 }
 h1 {
     font-size: 4rem;
@@ -145,6 +150,7 @@ main {
     background-color: #25273c;
     margin-bottom: 3rem;
     padding: 0 2rem;
+    border-radius: 0.5rem;
 }
 #addTaskCheckbox {
     margin-right: 1rem;
@@ -157,28 +163,29 @@ main {
     border: none;
     font-size: 1.6rem;
     padding: 0.5rem;
-    color: #adafc6; 
+    color: #adafc6;
 }
 .addTaskInput:focus {
     outline: none;
 }
 ::-webkit-input-placeholder {
     color: #adafc6; 
- }
- :-ms-input-placeholder {  
-    color: #adafc6; 
- }
- :-moz-placeholder { /* Firefox 18- */
-    color: #adafc6; 
- }
- 
- ::-moz-placeholder {  /* Firefox 19+ */
-    color: #adafc6; 
- }
+}
+:-ms-input-placeholder {  
+   color: #adafc6; 
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #adafc6; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #adafc6; 
+}
 .taskList {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
+    /* border-radius: 0.5rem; */
 }
 .task {
     display: flex;
@@ -188,26 +195,89 @@ main {
     background-color: #25273c;
     border-bottom: 1px solid #868790;
     padding: 0 2rem;
+    position: relative;
+}
+.task:first-of-type {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.dashboardCon * {
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 .checkbox {
     margin-right: 1rem;
     flex-basis: 6%;
     cursor: pointer;
 }
+.editCon {
+    position: absolute;
+    /* flex-basis: 83%; */
+    width: 95%;
+    display: flex;
+    align-items: center;
+    background-color: #25273c;
+    position: absolute;
+    transform: translateX(-300%);
+    transition: cubic-bezier(0.22, 0.69, 0.28, 1.08);
+    transition-duration: 0.5s;
+}
+.editInput {
+    /* position: absolute; */
+    font-size: 1.6rem;
+    width: 94%;
+    cursor: pointer;
+    background-color: #25273c;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.3rem;
+    color: #adafc6; 
+    border: none;
+}
+.fa-check {
+    margin-left: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.fa-check:hover {
+    color: white;
+}
+.editInput:focus {
+    outline-style: solid;
+    outline-color: #494C6B;
+    outline-width: 0.2rem;
+    border: none;
+}
+.edit .editCon {
+    transform: translateX(0%);
+    transition: 0.20s;
+}
 .task p {
-    flex-basis: 90%;
+    flex-basis: 83%;
     /* background-color: #25273c; */
     border: none;
     font-size: 1.6rem;
     padding: 1rem;
     cursor: pointer;
+    /* position: absolute; */
+}
+.task p:hover {
+    color: white;
 }
 .complete p {
     text-decoration: line-through;
     color: #43455a;
 }
+.fa-pen-to-square {
+    font-size: 2rem;
+    color: #494C6B;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+.fa-pen-to-square:hover {
+    color: white;
+}
 .delete {
     display: none;
+    cursor: pointer;
 }
 .task:hover .delete {
     display: block;
@@ -215,7 +285,7 @@ main {
 .dashboard {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     justify-content: space-between;
     gap: 3rem;
     align-items: center;
@@ -281,10 +351,12 @@ main {
     color: white;
 }
 .instruction {
+    display: flex;
+    grid-column: 1/3;
+    justify-content: center;
     margin: 3rem auto;
     color: #adafc6;
-    position: absolute;
-    top: 150%;
+    /* position: absolute; */
     font-size: 1.2rem;
 }
 .instruction p {
@@ -297,10 +369,10 @@ LIGHT THEME
     background-color: #fafafa;
 }
 .headerThemeLight {
-    background-image: url(images/bg-mobile-light.jpg);
+    background-image: url(../images/bg-mobile-light.jpg);
 }
 .lightThemeIcon {
-    background-image: url(images/icon-sun.svg);
+    background-image: url(../images/icon-sun.svg);
 }
 .addTaskInnerConTheme {
     background-color: white;
@@ -308,12 +380,24 @@ LIGHT THEME
 .addTaskInputTheme {
     background-color: white;
     border: none;
+    color: #4a4c58
 }
 .taskThemeLight {
     background-color: white;
     color: #4a4c58;
     box-shadow: 0.2px 0.2px 1px 1px #eff0f7;
     border-bottom: #eff0f7;
+}
+.fa-pen-to-squareLight {
+    color: #787d99;
+}
+.editInputThemeLght {
+    background-color: white;
+    color: #4a4c58;
+}
+.editConThemLight {
+    background-color: white;
+    color: #4a4c58;
 }
 .dashboardThemeLight {
     background-color: white;
@@ -339,15 +423,13 @@ LIGHT THEME
 }
 
 @media all and (min-width: 650px) {
-    body {
-    }
     header {
-        background-image: url(images/bg-desktop-dark.jpg);
+        background-image: url(../images/bg-desktop-dark.jpg);
         margin: 0 auto;
         justify-content: center;
     }
     .headerThemeLight {
-        background-image: url(images/bg-desktop-light.jpg);
+        background-image: url(../images/bg-desktop-light.jpg);
     }
     .headerItems {
         width: 60rem;
@@ -361,7 +443,7 @@ LIGHT THEME
     }
     .dashboard {
         grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-rows: 2fr;
         padding: 0 1rem;
     }
     .taskLeft {
@@ -398,8 +480,12 @@ LIGHT THEME
         display: grid;
         justify-content: end;
         align-items: center;
-        height: auto;
+        min-height: 100%;
         text-align: right;
         padding-right: 1rem;
+    }
+    .instruction {
+        grid-row: 2/3;
+        grid-column: 1/8;
     }
 }
