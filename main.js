@@ -15,6 +15,15 @@
 
 let todoList = [] //to store tasks which would later be stored as a value in the localStorage
 localStorage.getItem('todoList') !== null ? todoList.push(...(JSON.parse(localStorage.getItem('todoList')))) : '' // needed so as to stop todoList from becoming an empty array upon reload of the pade if local storage is not empty
+const numOfItem = document.querySelector('.numOfItem')
+
+function itemLeft() {
+    let length = 0
+    const tasks = document.querySelectorAll('.task')
+    tasks.forEach(task => !task.classList.contains('complete') ?  length++ : '')
+    numOfItem.innerHTML = length
+}
+setInterval(itemLeft, 500)
 
 
 window.addEventListener('DOMContentLoaded', addSavedUserTasks)
@@ -238,6 +247,7 @@ window.addEventListener('click', deleteTasks)
             })
             console.log(savedUserTasks)
             task.remove()
+            numOfItem.innerHTML = savedUserTasks.length
         })
     }
 
