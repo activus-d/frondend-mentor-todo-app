@@ -92,7 +92,7 @@ header {
     background-image: url(../images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 5rem 3rem;
+    padding: 5rem 2rem;
     letter-spacing: 1rem;
 }
 .headerItems {
@@ -122,7 +122,7 @@ h1 {
 }
 main {
     color: #adafc6;
-    flex-basis: 70%;
+    /* flex-basis: 80%; */
     height: auto;
     width: 100%;
     display: flex;
@@ -135,29 +135,31 @@ main {
 .mainCon {
     width: 100%;
     height: auto;
-    padding: 0 3rem;
+    padding: 0 1rem;
     position: relative;
 }
 .addTaskCon {
     height: 5rem;
 }
 .addTaskInnerCon {
-    height: 3rem;
+    height: 4rem;
     width: 100%;
     display: flex;
     align-items: center;
     font-size: 3rem;
     background-color: #25273c;
     margin-bottom: 3rem;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     border-radius: 0.5rem;
 }
 #addTaskCheckbox {
     margin-right: 1rem;
-    flex-basis: 6%;
+    flex-basis: 10%;
+    width: 3rem;
+    height: 3rem;
 }
 .addTaskInput {
-    flex-basis: 100%;
+    flex-basis: 90%;
     height: 100%;
     background-color: #25273c;
     border: none;
@@ -190,11 +192,11 @@ main {
 .task {
     display: flex;
     align-items: center;
-    min-height: 5rem;
+    height: 6rem;
     width: 100%;
     background-color: #25273c;
     border-bottom: 1px solid #868790;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     position: relative;
 }
 .task:first-of-type {
@@ -205,25 +207,27 @@ main {
 }
 .checkbox {
     margin-right: 1rem;
-    flex-basis: 6%;
+    flex-basis: 10%;
+    width: 4rem;
+    height: 4rem;
     cursor: pointer;
 }
 .editCon {
     position: absolute;
     /* flex-basis: 83%; */
     width: 95%;
+    left: 2%;
     display: flex;
     align-items: center;
     background-color: #25273c;
     position: absolute;
     transform: translateX(-300%);
-    transition: cubic-bezier(0.22, 0.69, 0.28, 1.08);
     transition-duration: 0.5s;
 }
 .editInput {
     /* position: absolute; */
     font-size: 1.6rem;
-    width: 94%;
+    width: 70%;
     cursor: pointer;
     background-color: #25273c;
     border: none;
@@ -233,12 +237,13 @@ main {
     border: none;
 }
 .fa-check {
-    margin-left: 1rem;
-    font-size: 2rem;
+    margin-left: 10%;
+    font-size: 4rem;
+    width: 20%;
     cursor: pointer;
 }
 .fa-check:hover {
-    color: white;
+    color: #6d6f78;
 }
 .editInput:focus {
     outline-style: solid;
@@ -251,33 +256,31 @@ main {
     transition: 0.20s;
 }
 .task p {
-    flex-basis: 83%;
+    flex-basis: 46%;
     /* background-color: #25273c; */
     border: none;
-    font-size: 1.6rem;
-    padding: 1rem;
+    font-size: 1.8rem;
+    margin: 1rem;
     cursor: pointer;
     /* position: absolute; */
 }
-.task p:hover {
-    color: white;
-}
+
 .complete p {
     text-decoration: line-through;
     color: #43455a;
 }
 .fa-pen-to-square {
-    font-size: 2rem;
-    color: #494C6B;
-    margin: 0 1rem;
+    font-size: 3rem;
+    color: #8a8daa;
+    margin: 0 4rem 0 3rem;
     cursor: pointer;
 }
-.fa-pen-to-square:hover {
-    color: white;
-}
+
 .delete {
     display: none;
     cursor: pointer;
+    width: 3rem;
+    height: 3rem;
 }
 .task:hover .delete {
     display: block;
@@ -305,9 +308,7 @@ main {
     padding: 0 2rem;
     cursor: pointer;
 }
-.taskLeft:hover {
-    color: white;
-}
+
 .clear {
     grid-column: 2/3;
     grid-row: 1/2;
@@ -319,9 +320,7 @@ main {
     padding: 0 2rem;
     cursor: pointer;
 }
-.clear span:hover {
-    color: white;
-}
+
 .categories {
     grid-column: 1/3;
     grid-row: 2/3;
@@ -388,6 +387,9 @@ LIGHT THEME
     box-shadow: 0.2px 0.2px 1px 1px #eff0f7;
     border-bottom: #eff0f7;
 }
+.taskLeftThemeLight .fa-check:hover {
+    color:#25273c
+}
 .fa-pen-to-squareLight {
     color: #787d99;
 }
@@ -398,6 +400,9 @@ LIGHT THEME
 .editConThemLight {
     background-color: white;
     color: #4a4c58;
+}
+.fa-pen-to-square:hover {
+    color: white;
 }
 .dashboardThemeLight {
     background-color: white;
@@ -418,6 +423,9 @@ LIGHT THEME
 .clearThemeLight span:hover {
     color: #4a4c58;
 }
+.clear span:hover {
+    color: white;
+}
 .instructionTheme {
     color: #868592;
 }
@@ -437,6 +445,9 @@ LIGHT THEME
     main {
         padding: 0;
     }
+    .task p:hover {
+        color: white;
+    }
     .mainCon {
         width: 60rem;
         padding: 0;
@@ -453,7 +464,9 @@ LIGHT THEME
         align-items: start;
         height: auto;
     }
-    
+    .taskLeft:hover {
+        color: white;
+    }
     .categories {
         grid-column: 3/6;
         grid-row: 1;
