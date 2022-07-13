@@ -111,6 +111,7 @@ header img {
     background-image: url(../images/icon-moon.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    transform: none;
     cursor: pointer;
 }
 
@@ -445,6 +446,7 @@ LIGHT THEME
     }
     main {
         padding: 0;
+        top: 24%;
     }
     .task p:hover {
         color: white;
