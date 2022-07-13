@@ -203,14 +203,14 @@ taskList.addEventListener('click', submitEdit)
                 taskElement.classList.remove('edit')
                 return
             }
-            let taskContent = (taskElement.querySelector('p')).textContent
+            let taskContent = (taskElement.querySelector('p')).innerHTML
             const savedUserTasks = JSON.parse(localStorage.getItem('todoList')) //since todolist was saved in local storage as a string, convert it back to an array of objs with the JSON.parse method
             indexOfSavedtask = savedUserTasks.forEach((task, index, array) => {
                 if(task.input === taskContent) {
                     task.input = editInputText
-                    // console.log(task.input)
-                    localStorage.setItem("todoList", JSON.stringify(array))
-                    taskContent = task.input
+                    // console.log(editInputText)
+                    localStorage.setItem("todoList", JSON.stringify(array));
+                    (taskElement.querySelector('p')).innerHTML = editInputText
                 }
             })
             taskElement.classList.remove('edit')

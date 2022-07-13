@@ -92,7 +92,7 @@ header {
     background-image: url(../images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 5rem 2rem;
+    padding: 5rem 3rem;
     letter-spacing: 1rem;
 }
 .headerItems {
@@ -113,10 +113,7 @@ header img {
     background-size: 100% 100%;
     cursor: pointer;
 }
-.themeIcon:hover {
-    transform: rotate(360deg);
-    transition: 0.3s;
-}
+
 h1 {
     font-size: 4rem;
 }
@@ -130,16 +127,17 @@ main {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 24%;
+    top: 17%;
 }
 .mainCon {
     width: 100%;
     height: auto;
-    padding: 0 1rem;
+    padding: 0 3rem;
     position: relative;
 }
 .addTaskCon {
     height: 5rem;
+    padding: ;
 }
 .addTaskInnerCon {
     height: 4rem;
@@ -438,6 +436,10 @@ LIGHT THEME
     }
     .headerThemeLight {
         background-image: url(../images/bg-desktop-light.jpg);
+    }
+    .themeIcon:hover {
+        transform: rotate(360deg);
+        transition: 0.3s;
     }
     .headerItems {
         width: 60rem;
